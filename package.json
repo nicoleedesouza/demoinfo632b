@@ -1,0 +1,29 @@
+{
+  "name": "chat-api",
+  "version": "1.0.0",
+  "description": "fvnweiroyhhebdxuyhb ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicoleedesouza/demoinfo632b.git"
+  },
+  "keywords": [
+    "NODE",
+    "CHAT",
+    "API"
+  ],
+  "author": "NICOLE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicoleedesouza/demoinfo632b/issues"
+  },
+  "homepage": "https://github.com/nicoleedesouza/demoinfo632b#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
