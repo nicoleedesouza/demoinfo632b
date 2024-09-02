@@ -4,10 +4,10 @@ const checktoken = async (token, id, key) => jwt.verify(token, key, (err, decode
     . . . .
 });
 
-const setToken = async (id, key) =>{
+const setToken = async (id, key) => {
     console.log(id);
     if (id) {
-        return jwt.sign({iid}, key, {expiresIn: 28800});
+        return jwt.sign({id }, key, { expiresIn: 28800 });
     }
     return false;
 };
