@@ -1,5 +1,7 @@
 const {MongoClient, Collection} = require("mongodb");
 const { listarSalas } = require("./salaModel");
+const { registrarUsuario } = require("./usuarioModel");
+const { checktoken, setToken } = require("../../util/token");
 
 let singleton;
 
@@ -19,4 +21,4 @@ let findAll = async (Collection)=>{
     return await db.Collection(Collection).find().toArray();
 }
 
-module.exports={findAll};
+module.exports={findAll, insertOne, registrarUsuario, listarSalas, checktoken, setToken};
