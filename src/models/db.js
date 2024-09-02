@@ -18,4 +18,4 @@ let findAll = async (Collection)=>{
     return await db.Collection(Collection).find().toArray();
 }
 
-module.exports={listarSalas};
+module.exports={findAll};

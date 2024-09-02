@@ -1,5 +1,7 @@
 function listarSalas() {
-    return [{nome: "Só tem gênio"}, {nome: "Vingadores do Java"}];
+    return [
+        {"nome": "Guerreiros da InfoCimol","nome": "Só os confirmados da INFO"
+    }];
 }
 
 module.exports = {listarSalas};
