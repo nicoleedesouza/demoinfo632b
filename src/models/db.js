@@ -1,7 +1,9 @@
 const {MongoClient, Collection} = require("mongodb");
-const { listarSalas } = require("./salaModel");
-const { registrarUsuario } = require("./usuarioModel");
-const { checktoken, setToken } = require("../../util/token");
+const { listarSalas, buscarSala, atualizarMensagens } = require("./salaModel");
+const { registrarUsuario, user, alterarUsuario } = require("./usuarioModel");
+const { checktoken, setToken } = require("../util/token");
+const app = require("../api");
+const { buscarMensagens } = require("../controllers/salaController");
 
 let singleton;
 
@@ -21,4 +23,23 @@ let findAll = async (Collection)=>{
     return await db.Collection(Collection).find().toArray();
 }
 
-module.exports={findAll, insertOne, registrarUsuario, listarSalas, checktoken, setToken};
+async function insertOne(collection, objeto) {
+    const db = await connect();
+    return db.collection(collection).insertOne(objeto) ;   
+}
+
+let findOne = async (collection, _id)=>{
+    const db = await connect();
+    let obj= await db.collection(collection).find({'_id':new ObjectId(_id)}).toArray();
+    if(obj)
+      return obj[0];
+    return false;
+  }
+  
+let updateOne= async (collection, object, param)=>{
+    const db = await connect();
+    let result= await db.collection(collection).updateOne(param, { $set: object} );
+    return result;
+  }  
+
+module.exports={findAll, listarSalas, Collection, insertOne, registrarUsuario, setToken, checktoken, buscarSala, user, alterarUsuario, findOne, updateOne, atualizarMensagens, buscarMensagens, id, token};
